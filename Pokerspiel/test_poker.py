@@ -33,7 +33,10 @@ class TestPoker(unittest.TestCase):
         self.assertEqual(bewertung(hand), "Flush")
 
     def test_straight(self):
-        hand = [k("Kreuz", w) for w in [3,4,5,6,7]]
+        # A straight must use mixed suits; one suit would be a straight flush.
+        hand = [k(farbe, wert) for farbe, wert in zip(
+            ["Kreuz", "Herz", "Pik", "Karo", "Kreuz"], [3, 4, 5, 6, 7]
+        )]
         self.assertEqual(bewertung(hand), "Straight")
 
     def test_three_of_a_kind(self):
