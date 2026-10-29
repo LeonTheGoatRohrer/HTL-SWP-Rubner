@@ -2,3 +2,10 @@
 Bildschirmfoto*
 *.odt
 assember_cpp.png
+
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.env
+.env.*
